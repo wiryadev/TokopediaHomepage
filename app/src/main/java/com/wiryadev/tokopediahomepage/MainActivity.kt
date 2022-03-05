@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         ) as NavHostFragment
         val navController = navHostFragment.navController
         binding.navView.setupWithNavController(navController)
+        binding.navView.itemIconTintList = null;
     }
 
 }
