@@ -3,10 +3,10 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_official_store">Official Store</string>
     <string name="title_feed">Feed</string>
     <string name="title_transaction">Transaksi</string>
     <string name="title_wishlist">Wishlist</string>
+    <string name="send_to">Dikirim ke</string>
 </resources>

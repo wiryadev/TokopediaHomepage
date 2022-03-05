@@ -1,42 +1,34 @@
 package com.wiryadev.tokopediahomepage.ui.home
 
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.viewbinding.library.fragment.viewBinding
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import com.wiryadev.tokopediahomepage.R
 import com.wiryadev.tokopediahomepage.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private var _binding: FragmentHomeBinding? = null
+    private val binding by viewBinding<FragmentHomeBinding>()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        val sendToString = getString(R.string.send_to)
+        val spannable = SpannableString("$sendToString Alamat Rumah Abrar Wiryawan").apply {
+            setSpan(
+                StyleSpan(Typeface.BOLD),
+                sendToString.length,
+                this.length,
+                Spannable.SPAN_INCLUSIVE_EXCLUSIVE,
+            )
         }
-        return root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        binding.tvSendTo.text = spannable
     }
 }
