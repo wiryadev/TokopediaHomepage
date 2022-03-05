@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1" />
+            app:layout_constraintGuide_percent="0.08" />
 
         <TextView
             android:id="@+id/tv_send_to"
@@ -55,15 +55,25 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:drawablePadding="4dp"
-            tools:text="@string/send_to"
-            android:textSize="12sp"
             android:textColor="@color/white"
+            android:textSize="12sp"
             app:drawableEndCompat="@drawable/ic_round_keyboard_arrow_down_12"
             app:drawableStartCompat="@drawable/ic_outline_location_on_12"
             app:drawableTint="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/guideline_start_curve"/>
+            tools:text="@string/send_to" />
+
+        <include
+            android:id="@+id/account_balance"
+            layout="@layout/layout_balance_card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_end_curve"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline_end_curve" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -9,4 +9,9 @@
     <string name="title_transaction">Transaksi</string>
     <string name="title_wishlist">Wishlist</string>
     <string name="send_to">Dikirim ke</string>
+    <string name="dummy_balance_gopay">Rp102.500</string>
+    <string name="dummy_gopay_coins">74.039 coins</string>
+    <string name="gopay_balance">Gopay balance</string>
+    <string name="dummy_member_silver">Member Silver</string>
+    <string name="dummy_member_coupon">31 Kupon</string>
 </resources>
