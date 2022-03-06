@@ -4,9 +4,10 @@ import android.os.Bundle
 import android.view.View
 import android.viewbinding.library.fragment.viewBinding
 import androidx.fragment.app.Fragment
+import com.wiryadev.tokopediahomepage.R
 import com.wiryadev.tokopediahomepage.databinding.FragmentOfficialStoreBinding
 
-class OfficialStoreFragment : Fragment() {
+class OfficialStoreFragment : Fragment(R.layout.fragment_official_store) {
 
     private val binding by viewBinding<FragmentOfficialStoreBinding>()
 

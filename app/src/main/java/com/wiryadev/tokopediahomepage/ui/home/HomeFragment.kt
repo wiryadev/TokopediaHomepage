@@ -10,12 +10,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.viewbinding.library.fragment.viewBinding
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.wiryadev.tokopediahomepage.R
 import com.wiryadev.tokopediahomepage.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private val binding by viewBinding<FragmentHomeBinding>()
+
+    private val viewModel by viewModels<HomeViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -30,5 +33,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             )
         }
         binding.tvSendTo.text = spannable
+
+        viewModel.firstLineServices.observe(viewLifecycleOwner) {
+            val adapter = ServiceAdapter(it)
+            binding.rvFirstServices.adapter = adapter
+        }
     }
 }
