@@ -16,4 +16,7 @@
     <string name="dummy_member_coupon">31 Kupon</string>
     <string name="service_s_icon">Service\'s Icon</string>
     <string name="promo">Promo</string>
+    <string name="video_recommendation">Video menarik untukmu</string>
+    <string name="see_all">Lihat Semua</string>
+    <string name="live_thumbnail">Live Thumbnail</string>
 </resources>
