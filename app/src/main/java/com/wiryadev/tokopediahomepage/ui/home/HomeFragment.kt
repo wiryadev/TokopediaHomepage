@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.StyleSpan
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.viewbinding.library.fragment.viewBinding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -34,9 +32,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
         binding.tvSendTo.text = spannable
 
-        viewModel.firstLineServices.observe(viewLifecycleOwner) {
+        viewModel.primaryServices.observe(viewLifecycleOwner) {
             val adapter = ServiceAdapter(it)
-            binding.rvFirstServices.adapter = adapter
+            binding.rvPrimaryServices.adapter = adapter
+        }
+
+        viewModel.secondaryServices.observe(viewLifecycleOwner) {
+            val adapter = ServiceAdapter(it)
+            binding.rvSecondaryServices.adapter = adapter
         }
 
         viewModel.promos.observe(viewLifecycleOwner) {

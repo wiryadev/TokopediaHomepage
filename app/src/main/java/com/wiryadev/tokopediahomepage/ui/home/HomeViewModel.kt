@@ -8,17 +8,22 @@ import com.wiryadev.tokopediahomepage.data.Service
 
 class HomeViewModel : ViewModel() {
 
-    private val _firstLineServices = MutableLiveData<List<Service>>().apply {
-        value = getFirstLineServices()
+    private val _primaryServices = MutableLiveData<List<Service>>().apply {
+        value = getPrimaryServices()
     }
-    val firstLineServices: LiveData<List<Service>> = _firstLineServices
+    val primaryServices: LiveData<List<Service>> = _primaryServices
+
+    private val _secondaryServices = MutableLiveData<List<Service>>().apply {
+        value = getSecondaryServices()
+    }
+    val secondaryServices: LiveData<List<Service>> = _secondaryServices
 
     private val _promos = MutableLiveData<List<Int>>().apply {
         value = getPromos()
     }
     val promos: LiveData<List<Int>> = _promos
 
-    private fun getFirstLineServices(): List<Service> = listOf(
+    private fun getPrimaryServices(): List<Service> = listOf(
         Service("Official Store", R.drawable.ic_os_icon_header),
         Service("Lihat Semua", R.drawable.ic_round_dashboard_24),
         Service("Kebutuhan Harian", R.drawable.ic_round_shopping_basket_24),
@@ -27,11 +32,14 @@ class HomeViewModel : ViewModel() {
         Service("Keuangan", R.drawable.ic_round_monetization_on_24),
     )
 
-//    private fun getPromos(): List<String> = listOf(
-//        "https://images.tokopedia.net/img/cache/1190/wmEwCC/2022/3/5/5be6023b-e90a-4715-9e05-11044efff166.jpg",
-//        "https://images.tokopedia.net/img/cache/1190/wmEwCC/2022/3/5/d77ce227-c5b1-4ad3-949d-b30a5bc31641.jpg",
-//        "https://images.tokopedia.net/img/cache/1190/wmEwCC/2022/3/1/7835b45b-2303-4fcb-9656-5f2b6c3cd80c.jpg",
-//    )
+    private fun getSecondaryServices(): List<Service> = listOf(
+        Service("Peduli Lindungi", R.drawable.ic_transport_24_pedulilindungi),
+        Service("Bazar Hari Ini", R.drawable.ic_round_curtains_24),
+        Service("Live Shopping", R.drawable.ic_round_play_arrow_24),
+        Service("Tokopedia Seru", R.drawable.ic_round_videogame_asset_24),
+        Service("Bangga Lokal", R.drawable.ic_round_heart_broken_24),
+        Service("Bayar di Tempat", R.drawable.ic_round_handshake_24),
+    )
 
     private fun getPromos(): List<Int> = listOf(
         R.drawable.promo_1,
