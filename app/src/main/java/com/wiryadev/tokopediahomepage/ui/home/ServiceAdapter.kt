@@ -15,10 +15,16 @@ class ServiceAdapter(
         private val binding: ItemMainServiceBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(data: Service) {
+        fun bind(data: Service, isLastItem: Boolean) {
             with(binding) {
                 ivService.load(data.icon)
                 tvService.text = data.name
+
+                if (isLastItem) {
+                    val param = binding.root.layoutParams as ViewGroup.MarginLayoutParams
+                    param.marginEnd = 48
+                    binding.root.layoutParams = param
+                }
             }
         }
     }
@@ -31,7 +37,7 @@ class ServiceAdapter(
     }
 
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
-        holder.bind(services[position])
+        holder.bind(services[position], position == (services.lastIndex))
     }
 
     override fun getItemCount(): Int = services.size
