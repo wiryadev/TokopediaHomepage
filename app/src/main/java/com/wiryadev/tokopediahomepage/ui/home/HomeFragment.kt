@@ -38,5 +38,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             val adapter = ServiceAdapter(it)
             binding.rvFirstServices.adapter = adapter
         }
+
+        viewModel.promos.observe(viewLifecycleOwner) {
+            val adapter = PromoAdapter(it)
+            binding.vpPromos.adapter = adapter
+        }
     }
 }
