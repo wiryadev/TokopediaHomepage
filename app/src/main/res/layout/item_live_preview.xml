@@ -87,6 +87,7 @@
             android:padding="4dp"
             android:textColor="@color/white"
             android:textSize="12sp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
             app:drawableStartCompat="@drawable/ic_discount_16"
             app:drawableTint="@color/white"
             app:layout_constraintBottom_toTopOf="@id/bg_live_caption"
