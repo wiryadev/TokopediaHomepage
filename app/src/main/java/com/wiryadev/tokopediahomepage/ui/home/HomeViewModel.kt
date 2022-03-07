@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wiryadev.tokopediahomepage.R
 import com.wiryadev.tokopediahomepage.data.Service
+import com.wiryadev.tokopediahomepage.data.Video
 
 class HomeViewModel : ViewModel() {
 
@@ -23,6 +24,11 @@ class HomeViewModel : ViewModel() {
     }
     val promos: LiveData<List<Int>> = _promos
 
+    private val _videos = MutableLiveData<List<Video>>().apply {
+        value = getVideos()
+    }
+    val videos: LiveData<List<Video>> = _videos
+
     private fun getPrimaryServices(): List<Service> = listOf(
         Service("Official Store", R.drawable.ic_os_icon_header),
         Service("Lihat Semua", R.drawable.ic_round_dashboard_24),
@@ -39,6 +45,30 @@ class HomeViewModel : ViewModel() {
         Service("Tokopedia Seru", R.drawable.ic_round_videogame_asset_24),
         Service("Bangga Lokal", R.drawable.ic_round_heart_broken_24),
         Service("Bayar di Tempat", R.drawable.ic_round_handshake_24),
+    )
+
+    private fun getVideos(): List<Video> = listOf(
+        Video(
+            thumbnail = R.drawable.video_thumbnail_1,
+            title = "Cosplay Kit termurah hanya di sini",
+            store = "CosplayPedia",
+            views = 2.5,
+            discount = "Diskon 70%"
+        ),
+        Video(
+            thumbnail = R.drawable.video_thumbnail_2,
+            title = "Fashion kekinian kantong tetep aman",
+            store = "FashionINsta",
+            views = 2.0,
+            discount = "Kupon Spesial"
+        ),
+        Video(
+            thumbnail = R.drawable.video_thumbnail_3,
+            title = "Alat recording buat streamer pemula",
+            store = "RecOrder",
+            views = 1.1,
+            discount = "Cashback 50%"
+        ),
     )
 
     private fun getPromos(): List<Int> = listOf(

@@ -46,5 +46,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             val adapter = PromoAdapter(it)
             binding.vpPromos.adapter = adapter
         }
+
+        viewModel.videos.observe(viewLifecycleOwner) {
+            val adapter = VideoAdapter(it)
+            binding.rvVideos.adapter = adapter
+        }
     }
 }
