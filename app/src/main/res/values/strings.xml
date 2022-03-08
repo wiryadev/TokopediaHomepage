@@ -19,4 +19,6 @@
     <string name="video_recommendation">Video menarik untukmu</string>
     <string name="see_all">Lihat Semua</string>
     <string name="live_thumbnail">Live Thumbnail</string>
+    <string name="dummy_search_query">Cari laptop</string>
+    <string name="search_icon">Search Icon</string>
 </resources>
