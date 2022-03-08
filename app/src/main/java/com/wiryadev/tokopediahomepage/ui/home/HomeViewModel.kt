@@ -39,9 +39,12 @@ class HomeViewModel : ViewModel() {
         Service("Official Store", R.drawable.ic_os_icon_header),
         Service("Lihat Semua", R.drawable.ic_round_dashboard_24),
         Service("Kebutuhan Harian", R.drawable.ic_round_shopping_basket_24),
+        Service("Elektronik", R.drawable.ic_round_headphones_24),
         Service("Handphone & Tablet", R.drawable.ic_round_tablet_android_24),
         Service("Top-Up & Tagihan", R.drawable.ic_baseline_receipt_long_24),
         Service("Keuangan", R.drawable.ic_round_monetization_on_24),
+        Service("Travel & Entertainment", R.drawable.ic_round_airplane_ticket_24),
+        Service("Office & Stationery", R.drawable.ic_round_document_scanner_24),
     )
 
     private fun getSecondaryServices(): List<Service> = listOf(
@@ -115,6 +118,14 @@ class HomeViewModel : ViewModel() {
             originalPrice = 75000,
             location = "Jakarta Selatan",
             isOfficialStore = true,
+        ),
+        DiscountedProduct(
+            imageUrl = "https://images.tokopedia.net/img/cache/900/VqbcmM/2020/9/16/d1a3c190-13d4-4692-98f5-2f04202cd371.jpg",
+            discount = 43,
+            price = 17000,
+            originalPrice = 29950,
+            location = "Jakarta Barat",
+            isOfficialStore = false,
         ),
     )
 }

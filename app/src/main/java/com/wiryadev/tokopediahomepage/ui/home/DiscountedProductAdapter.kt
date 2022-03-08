@@ -19,12 +19,17 @@ class DiscountedProductAdapter(
         private val binding: ItemDiscountedProductBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(data: DiscountedProduct, isLastItem: Boolean) {
+        fun bind(
+            data: DiscountedProduct,
+            isFirstItem: Boolean,
+            isLastItem: Boolean,
+        ) {
             with(binding) {
                 ivProduct.load(data.imageUrl)
                 tvPrice.text = root.context.getString(R.string.price, data.price)
                 tvOriginalPrice.text = root.context.getString(R.string.price, data.originalPrice)
-                tvOriginalPrice.paintFlags = tvOriginalPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+                tvOriginalPrice.paintFlags =
+                    tvOriginalPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
                 tvDiscount.text = StringBuilder(data.discount.toString()).append("%")
 
                 tvLocation.text = data.location
@@ -37,6 +42,12 @@ class DiscountedProductAdapter(
                 tvLocation.setCompoundDrawablesRelativeWithIntrinsicBounds(
                     drawableStoreType, null, null, null
                 )
+
+                if (isFirstItem) {
+                    val param = binding.root.layoutParams as ViewGroup.MarginLayoutParams
+                    param.marginStart = root.context.dpToPx(16f)
+                    binding.root.layoutParams = param
+                }
 
                 if (isLastItem) {
                     val param = binding.root.layoutParams as ViewGroup.MarginLayoutParams
@@ -55,7 +66,11 @@ class DiscountedProductAdapter(
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        holder.bind(products[position], position == (products.lastIndex))
+        holder.bind(
+            products[position],
+            position == 0,
+            position == (products.lastIndex)
+        )
     }
 
     override fun getItemCount(): Int = products.size
