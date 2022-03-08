@@ -1,13 +1,16 @@
 package com.wiryadev.tokopediahomepage.ui.home
 
+import android.app.Activity
 import android.graphics.Typeface
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.StyleSpan
 import android.view.View
+import android.view.WindowManager
 import android.viewbinding.library.fragment.viewBinding
 import androidx.core.content.ContextCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.wiryadev.tokopediahomepage.R
@@ -68,6 +71,17 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     btnMenu.setColorFilter(iconColor)
                     btnNotification.setColorFilter(iconColor)
                 }
+
+                val statusBarColor = ContextCompat.getColor(
+                    requireContext(),
+                    if (scrollY > actionBarHeight) R.color.white else R.color.green_200
+                )
+                val isLight = scrollY > actionBarHeight
+
+                activity?.changeStatusBarColor(
+                    statusBarColor,
+                    isLight
+                )
             }
         }
 
@@ -95,5 +109,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             val adapter = DiscountedProductAdapter(it)
             binding.rvDiscount.adapter = adapter
         }
+    }
+
+    private fun Activity.changeStatusBarColor(color: Int, isLight: Boolean) {
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = color
+
+        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = isLight
     }
 }
