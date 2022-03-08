@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">TokopediaHomepage</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_official_store">Official Store</string>
     <string name="title_feed">Feed</string>
@@ -28,4 +26,5 @@
     <string name="dummy_discount_countdown">00 : 43 : 51</string>
     <string name="dummy_discount">65%</string>
     <string name="price">Rp %d</string>
+    <string name="bebas_ongkir">Bebas Ongkir</string>
 </resources>

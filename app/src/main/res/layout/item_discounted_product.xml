@@ -82,7 +82,8 @@
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="@+id/tv_location"
             app:layout_constraintTop_toBottomOf="@+id/tv_location"
-            app:srcCompat="@drawable/ic_free_shipping" />
+            app:srcCompat="@drawable/ic_free_shipping"
+            android:contentDescription="@string/bebas_ongkir" />
 
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/progressBar"

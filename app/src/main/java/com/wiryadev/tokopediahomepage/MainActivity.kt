@@ -1,12 +1,8 @@
 package com.wiryadev.tokopediahomepage
 
 import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.wiryadev.tokopediahomepage.databinding.ActivityMainBinding
 
@@ -25,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         ) as NavHostFragment
         val navController = navHostFragment.navController
         binding.navView.setupWithNavController(navController)
-        binding.navView.itemIconTintList = null;
+        binding.navView.itemIconTintList = null
     }
 
 }
