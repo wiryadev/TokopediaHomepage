@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.wiryadev.tokopediahomepage.data.Video
 import com.wiryadev.tokopediahomepage.databinding.ItemLivePreviewBinding
+import com.wiryadev.tokopediahomepage.dpToPx
 
 class VideoAdapter(
     private val videos: List<Video>
@@ -27,7 +28,7 @@ class VideoAdapter(
 
                 if (isLastItem) {
                     val param = binding.root.layoutParams as ViewGroup.MarginLayoutParams
-                    param.marginEnd = 48
+                    param.marginEnd = root.context.dpToPx(16f)
                     binding.root.layoutParams = param
                 }
             }

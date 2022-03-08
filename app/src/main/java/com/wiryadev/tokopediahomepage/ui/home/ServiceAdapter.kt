@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.wiryadev.tokopediahomepage.data.Service
 import com.wiryadev.tokopediahomepage.databinding.ItemMainServiceBinding
+import com.wiryadev.tokopediahomepage.dpToPx
 
 class ServiceAdapter(
     private val services: List<Service>
@@ -22,7 +23,7 @@ class ServiceAdapter(
 
                 if (isLastItem) {
                     val param = binding.root.layoutParams as ViewGroup.MarginLayoutParams
-                    param.marginEnd = 48
+                    param.marginEnd = root.context.dpToPx(16f)
                     binding.root.layoutParams = param
                 }
             }

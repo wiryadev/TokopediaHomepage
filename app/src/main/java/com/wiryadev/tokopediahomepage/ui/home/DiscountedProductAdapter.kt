@@ -9,6 +9,7 @@ import coil.load
 import com.wiryadev.tokopediahomepage.R
 import com.wiryadev.tokopediahomepage.data.DiscountedProduct
 import com.wiryadev.tokopediahomepage.databinding.ItemDiscountedProductBinding
+import com.wiryadev.tokopediahomepage.dpToPx
 
 class DiscountedProductAdapter(
     private val products: List<DiscountedProduct>
@@ -39,7 +40,7 @@ class DiscountedProductAdapter(
 
                 if (isLastItem) {
                     val param = binding.root.layoutParams as ViewGroup.MarginLayoutParams
-                    param.marginEnd = 48
+                    param.marginEnd = root.context.dpToPx(16f)
                     binding.root.layoutParams = param
                 }
             }
