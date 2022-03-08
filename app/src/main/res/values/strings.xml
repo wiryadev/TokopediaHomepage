@@ -21,4 +21,11 @@
     <string name="live_thumbnail">Live Thumbnail</string>
     <string name="dummy_search_query">Cari laptop</string>
     <string name="search_icon">Search Icon</string>
+    <string name="segera_habis">Segera Habis</string>
+    <string name="product_image">Product Image</string>
+    <string name="kejar_diskon_spesial">Kejar Diskon Spesial</string>
+    <string name="berakhir_dalam">Berakhir dalam</string>
+    <string name="dummy_discount_countdown">00 : 43 : 51</string>
+    <string name="dummy_discount">65%</string>
+    <string name="price">Rp %d</string>
 </resources>

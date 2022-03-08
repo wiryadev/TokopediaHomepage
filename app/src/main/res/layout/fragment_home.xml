@@ -148,14 +148,81 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:orientation="horizontal"
-                tools:itemCount="3"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:itemCount="3"
                 tools:listitem="@layout/item_live_preview" />
 
+            <TextView
+                android:id="@+id/tv_videos_title_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/kejar_diskon_spesial"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_videos" />
+
+            <TextView
+                android:id="@+id/tv_videos_subtitle_section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/berakhir_dalam"
+                app:layout_constraintBottom_toBottomOf="@id/tv_countdown"
+                app:layout_constraintStart_toStartOf="@id/tv_videos_title_section"
+                app:layout_constraintTop_toTopOf="@id/tv_countdown" />
+
+            <TextView
+                android:id="@+id/tv_countdown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/bg_countdown"
+                android:drawablePadding="4dp"
+                android:padding="4dp"
+                android:text="@string/dummy_discount_countdown"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/ic_round_access_time_16"
+                app:layout_constraintStart_toEndOf="@id/tv_videos_subtitle_section"
+                app:layout_constraintTop_toBottomOf="@id/tv_videos_title_section" />
+
+            <TextView
+                android:id="@+id/tv_see_all_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@string/see_all"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                android:textColor="@color/green_500"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_countdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_countdown" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_discount"
+                android:layout_width="0dp"
+                android:paddingVertical="8dp"
+                android:background="@color/green_400"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_countdown"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_discounted_product" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

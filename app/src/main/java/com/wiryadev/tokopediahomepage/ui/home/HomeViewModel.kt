@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wiryadev.tokopediahomepage.R
+import com.wiryadev.tokopediahomepage.data.DiscountedProduct
 import com.wiryadev.tokopediahomepage.data.Service
 import com.wiryadev.tokopediahomepage.data.Video
 
@@ -28,6 +29,11 @@ class HomeViewModel : ViewModel() {
         value = getVideos()
     }
     val videos: LiveData<List<Video>> = _videos
+
+    private val _discountedProducts = MutableLiveData<List<DiscountedProduct>>().apply {
+        value = getDiscountedProducts()
+    }
+    val discountedProducts: LiveData<List<DiscountedProduct>> = _discountedProducts
 
     private fun getPrimaryServices(): List<Service> = listOf(
         Service("Official Store", R.drawable.ic_os_icon_header),
@@ -75,5 +81,40 @@ class HomeViewModel : ViewModel() {
         R.drawable.promo_1,
         R.drawable.promo_2,
         R.drawable.promo_3,
+    )
+
+    private fun getDiscountedProducts(): List<DiscountedProduct> = listOf(
+        DiscountedProduct(
+            imageUrl = "https://images.tokopedia.net/img/cache/900/VqbcmM/2022/2/24/94a15375-c181-43f7-a584-bff54fbdeb19.jpg",
+            discount = 50,
+            price = 85000,
+            originalPrice = 170000,
+            location = "Jakarta Pusat",
+            isOfficialStore = true,
+        ),
+        DiscountedProduct(
+            imageUrl = "https://images.tokopedia.net/img/cache/900/product-1/2019/10/17/6434676/6434676_8370ebbe-466e-4799-bba0-0b9ee02cf17b.jpg",
+            discount = 57,
+            price = 19800,
+            originalPrice = 45900,
+            location = "Jakarta Barat",
+            isOfficialStore = true,
+        ),
+        DiscountedProduct(
+            imageUrl = "https://images.tokopedia.net/img/cache/900/VqbcmM/2022/3/1/88fa7932-0424-4512-8eaf-b1f5545b40e9.jpg",
+            discount = 33,
+            price = 30000,
+            originalPrice = 45000,
+            location = "Jakarta Pusat",
+            isOfficialStore = false,
+        ),
+        DiscountedProduct(
+            imageUrl = "https://images.tokopedia.net/img/cache/900/VqbcmM/2021/10/8/d25ea626-5921-457f-aa34-4747674a8cf3.png",
+            discount = 73,
+            price = 19999,
+            originalPrice = 75000,
+            location = "Jakarta Selatan",
+            isOfficialStore = true,
+        ),
     )
 }
