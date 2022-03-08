@@ -8,9 +8,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_transparent">#80FFFFFF</color>
     <color name="unify_900">#ff2e3137</color>
     <color name="disco_lihat_bg">#ffffffff</color>
     <color name="disco_lihat_clr_arrow">#ff525a67</color>
+    <color name="grey_500">#ff525a67</color>
     <color name="grey_50">#828995</color>
     <color name="red_50">#FFDBE2</color>
     <color name="red_500">#EF144A</color>

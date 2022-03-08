@@ -4,15 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/green_500"
     tools:context=".ui.home.HomeFragment">
 
     <include
-        android:id="@+id/app_bar_detail"
+        android:id="@+id/app_bar_home"
         layout="@layout/app_bar_home" />
 
     <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -61,7 +64,7 @@
                 android:layout_marginStart="16dp"
                 android:drawablePadding="4dp"
                 android:textColor="@color/white"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 app:drawableEndCompat="@drawable/ic_round_keyboard_arrow_down_12"
                 app:drawableStartCompat="@drawable/ic_outline_location_on_12"
                 app:drawableTint="@color/white"
