@@ -8,19 +8,4 @@
     android:gravity="center"
     tools:context=".ui.official_store.OfficialStoreFragment">
 
-    <com.google.android.material.progressindicator.LinearProgressIndicator
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:indicatorDirectionLinear="startToEnd"
-        android:layout_marginHorizontal="16dp"
-        android:progress="50"
-        app:trackCornerRadius="4dp"/>
-
-    <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:indicatorDirectionLinear="endToStart"
-        android:progress="50"
-        app:trackCornerRadius="4dp"/>
-
 </LinearLayout>
