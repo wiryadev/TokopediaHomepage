@@ -13,6 +13,9 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
 import com.wiryadev.tokopediahomepage.R
 import com.wiryadev.tokopediahomepage.databinding.FragmentHomeBinding
 import com.wiryadev.tokopediahomepage.dpToPx
@@ -36,7 +39,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             )
         }
         binding.tvSendTo.text = spannable
-
 
         val actionBarHeight = binding.root.context.dpToPx(24f)
 
@@ -95,9 +97,20 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             binding.rvSecondaryServices.adapter = adapter
         }
 
+        val compositePageTransformer = CompositePageTransformer()
+        val marginPage = requireContext().dpToPx(8f)
+        compositePageTransformer.addTransformer(MarginPageTransformer(marginPage))
+
         viewModel.promos.observe(viewLifecycleOwner) {
-            val adapter = PromoAdapter(it)
-            binding.vpPromos.adapter = adapter
+            val vpAdapter = PromoAdapter(it)
+            binding.vpPromos.run {
+                adapter = vpAdapter
+                clipToPadding = false
+                clipChildren = false
+                offscreenPageLimit = 3
+                getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
+                setPageTransformer(compositePageTransformer)
+            }
         }
 
         viewModel.videos.observe(viewLifecycleOwner) {
