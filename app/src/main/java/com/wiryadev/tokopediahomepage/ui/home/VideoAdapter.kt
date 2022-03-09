@@ -23,7 +23,7 @@ class VideoAdapter(
                 }
                 tvTitleLive.text = data.title
                 tvStoreLive.text = data.store
-                tvLiveViews.text = data.views.toString()
+                tvLiveViews.text = StringBuilder(data.views.toString()).append(" rb")
                 tvDiscount.text = data.discount
 
                 if (isLastItem) {

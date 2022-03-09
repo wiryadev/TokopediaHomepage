@@ -13,6 +13,7 @@
         android:paddingVertical="12dp"
         android:paddingHorizontal="16dp">
 
+        <!-- Use Button because its not the real search bar -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/search_view"
             android:layout_width="0dp"
