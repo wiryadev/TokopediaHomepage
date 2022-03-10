@@ -84,6 +84,7 @@ class HomeViewModel : ViewModel() {
         R.drawable.promo_1,
         R.drawable.promo_2,
         R.drawable.promo_3,
+        R.drawable.promo_4,
     )
 
     private fun getDiscountedProducts(): List<DiscountedProduct> = listOf(
