@@ -76,9 +76,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
                 val statusBarColor = ContextCompat.getColor(
                     requireContext(),
-                    if (scrollY > actionBarHeight) R.color.white else R.color.green_200
+                    if (scrollY > 1) R.color.white else R.color.green_200
                 )
-                val isLight = scrollY > actionBarHeight
+                val isLight = scrollY > 1
 
                 activity?.changeStatusBarColor(
                     statusBarColor,
