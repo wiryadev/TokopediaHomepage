@@ -49,11 +49,11 @@ class HomeViewModel : ViewModel() {
 
     private fun getSecondaryServices(): List<Service> = listOf(
         Service("Peduli Lindungi", R.drawable.ic_transport_24_pedulilindungi),
-        Service("Bazar Hari Ini", R.drawable.ic_round_curtains_24),
-        Service("Live Shopping", R.drawable.ic_round_play_arrow_24),
-        Service("Tokopedia Seru", R.drawable.ic_round_videogame_asset_24),
-        Service("Bangga Lokal", R.drawable.ic_round_heart_broken_24),
-        Service("Bayar di Tempat", R.drawable.ic_round_handshake_24),
+        Service("Bazar Hari Ini", R.drawable.ic_bazaar),
+        Service("Live Shopping", R.drawable.ic_live_shopping),
+        Service("Tokopedia Seru", R.drawable.ic_seru),
+        Service("Bangga Lokal", R.drawable.ic_local_pride),
+        Service("Bayar di Tempat", R.drawable.ic_cod),
     )
 
     private fun getVideos(): List<Video> = listOf(
