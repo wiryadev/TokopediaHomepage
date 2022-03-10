@@ -36,24 +36,24 @@ class HomeViewModel : ViewModel() {
     val discountedProducts: LiveData<List<DiscountedProduct>> = _discountedProducts
 
     private fun getPrimaryServices(): List<Service> = listOf(
-        Service("Official Store", R.drawable.ic_os_icon_header),
-        Service("Lihat Semua", R.drawable.ic_round_dashboard_24),
-        Service("Kebutuhan Harian", R.drawable.ic_round_shopping_basket_24),
-        Service("Elektronik", R.drawable.ic_round_headphones_24),
-        Service("Handphone & Tablet", R.drawable.ic_round_tablet_android_24),
-        Service("Top-Up & Tagihan", R.drawable.ic_baseline_receipt_long_24),
-        Service("Keuangan", R.drawable.ic_round_monetization_on_24),
-        Service("Travel & Entertainment", R.drawable.ic_round_airplane_ticket_24),
-        Service("Office & Stationery", R.drawable.ic_round_document_scanner_24),
+        Service("Official Store", R.drawable.ic_os_service),
+        Service("Lihat Semua", R.drawable.ic_see_all),
+        Service("Kebutuhan Harian", R.drawable.ic_daily_needs),
+        Service("Elektronik", R.drawable.ic_electronic),
+        Service("Handphone & Tablet", R.drawable.ic_phone_tab),
+        Service("Top-Up & Tagihan", R.drawable.ic_top_up),
+        Service("Keuangan", R.drawable.ic_money),
+        Service("Travel & Entertainment", R.drawable.ic_plane),
+        Service("Office & Stationery", R.drawable.ic_stationery),
     )
 
     private fun getSecondaryServices(): List<Service> = listOf(
         Service("Peduli Lindungi", R.drawable.ic_transport_24_pedulilindungi),
-        Service("Bazar Hari Ini", R.drawable.ic_round_curtains_24),
-        Service("Live Shopping", R.drawable.ic_round_play_arrow_24),
-        Service("Tokopedia Seru", R.drawable.ic_round_videogame_asset_24),
-        Service("Bangga Lokal", R.drawable.ic_round_heart_broken_24),
-        Service("Bayar di Tempat", R.drawable.ic_round_handshake_24),
+        Service("Bazar Hari Ini", R.drawable.ic_bazaar),
+        Service("Live Shopping", R.drawable.ic_live_shopping),
+        Service("Tokopedia Seru", R.drawable.ic_seru),
+        Service("Bangga Lokal", R.drawable.ic_local_pride),
+        Service("Bayar di Tempat", R.drawable.ic_cod),
     )
 
     private fun getVideos(): List<Video> = listOf(
