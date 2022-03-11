@@ -40,11 +40,11 @@ class HomeViewModel : ViewModel() {
         Service("Lihat Semua", R.drawable.ic_see_all),
         Service("Kebutuhan Harian", R.drawable.ic_daily_needs),
         Service("Elektronik", R.drawable.ic_electronic),
-        Service("Handphone & Tablet", R.drawable.ic_phone_tab),
         Service("Top-Up & Tagihan", R.drawable.ic_top_up),
+        Service("Office & Stationery", R.drawable.ic_stationery),
         Service("Keuangan", R.drawable.ic_money),
         Service("Travel & Entertainment", R.drawable.ic_plane),
-        Service("Office & Stationery", R.drawable.ic_stationery),
+        Service("Handphone & Tablet", R.drawable.ic_phone_tab),
     )
 
     private fun getSecondaryServices(): List<Service> = listOf(
